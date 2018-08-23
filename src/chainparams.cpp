@@ -130,18 +130,18 @@ public:
         txNew.vout.resize(1);
         txNew.vin[0].scriptSig = CScript() << 486604799 << CScriptNum(4) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
         txNew.vout[0].nValue = 50 * COIN;
-        txNew.vout[0].scriptPubKey = CScript() << ParseHex("045970cc026d5f7b4e91096157353064f20b5c2ed31a7535b0cec4bac4be4dcb745b1385efde196652ff8eab9d776c357d2b3aa8e0aebe4c106f2a7061201dd107") << OP_CHECKSIG;
+        txNew.vout[0].scriptPubKey = CScript() << ParseHex("0486bce1bac0d543f104cbff2bd23680056a3b9ea05e1137d2ff90eeb5e08472eb500322593a2cb06fbf8297d7beb6cd30cb90f98153b5b7cce1493749e41e0284") << OP_CHECKSIG;
         genesis.vtx.push_back(txNew);
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime = 1534425430;
+        genesis.nTime = 1535055337;
         genesis.nBits = 0x1e0ffff0;
-        genesis.nNonce = 210956;
+        genesis.nNonce = 20663624;
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("000006eeaf84bb9cbab937799e64c47c160a11a0cb88249bfe268c18e690a12f"));
-        assert(genesis.hashMerkleRoot == uint256("2c82b71be20597c524f3d473f872162a10cd3fec56468f3ce118649fe5dd2d22"));
+        assert(hashGenesisBlock == uint256("000007768640f9a62fcad8ef997ed2feb4394e726bc18df8e267722cab4a089e"));
+        assert(genesis.hashMerkleRoot == uint256("e0b7f8c3c0b743898c296ee189a6d2abbda9bbd2ad0c35072a5d40734c778e83"));
 
         vSeeds.push_back(CDNSSeedData("seed1.dividend.cash", "seed1.dividend.cash"));
         vSeeds.push_back(CDNSSeedData("seed2.dividend.cash", "seed2.dividend.cash"));
